@@ -1,0 +1,13 @@
+c:\users\wretc\documents\visual studio 2017\Projects\RAMDiskCopy2\RAMDiskCopy2\bin\Debug\RAMDiskCopy2.exe.config
+c:\users\wretc\documents\visual studio 2017\Projects\RAMDiskCopy2\RAMDiskCopy2\bin\Debug\RAMDiskCopy2.exe
+c:\users\wretc\documents\visual studio 2017\Projects\RAMDiskCopy2\RAMDiskCopy2\bin\Debug\RAMDiskCopy2.pdb
+c:\users\wretc\documents\visual studio 2017\Projects\RAMDiskCopy2\RAMDiskCopy2\bin\Debug\RAMDiskCopy2.xml
+c:\users\wretc\documents\visual studio 2017\Projects\RAMDiskCopy2\RAMDiskCopy2\obj\Debug\RAMDiskCopy2.vbprojResolveAssemblyReference.cache
+c:\users\wretc\documents\visual studio 2017\Projects\RAMDiskCopy2\RAMDiskCopy2\obj\Debug\RAMDiskCopy2.RAMDiskCopy2.resources
+c:\users\wretc\documents\visual studio 2017\Projects\RAMDiskCopy2\RAMDiskCopy2\obj\Debug\RAMDiskCopy2.Resources.resources
+c:\users\wretc\documents\visual studio 2017\Projects\RAMDiskCopy2\RAMDiskCopy2\obj\Debug\RAMDiskCopy2.vbproj.GenerateResource.Cache
+c:\users\wretc\documents\visual studio 2017\Projects\RAMDiskCopy2\RAMDiskCopy2\obj\Debug\RAMDiskCopy2.exe
+c:\users\wretc\documents\visual studio 2017\Projects\RAMDiskCopy2\RAMDiskCopy2\obj\Debug\RAMDiskCopy2.xml
+c:\users\wretc\documents\visual studio 2017\Projects\RAMDiskCopy2\RAMDiskCopy2\obj\Debug\RAMDiskCopy2.pdb
+C:\Users\wretc\documents\visual studio 2017\Projects\RAMDiskCopy2\RAMDiskCopy2\obj\Debug\RAMDiskCopy2.About.resources
+C:\Users\wretc\documents\visual studio 2017\Projects\RAMDiskCopy2\RAMDiskCopy2\obj\Debug\RAMDiskCopy2.Disclaimer.resources
