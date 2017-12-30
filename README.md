@@ -1,6 +1,6 @@
 # RAMDiskCopy2
 
-Download the latest version here: https://github.com/havenvanheusen/RAMDiskCopy2/releases/download/1.0.0/RAMDiskCopy2.exe
+Download the latest version here: https://github.com/havenvanheusen/RAMDiskCopy2/releases/download/1.0.1/RAMDiskCopy2.exe
 
 Creates a RAM disk and copies specified files to it leaving a symbolic link so that it may be accessed as if it never left all while leaving a backup copy of the files behind in case disaster strikes and your RAM disk goes bye-bye. This version does not have the ability to copy files back from the RAMDisk to your normal storage device (though this is planned).
 
