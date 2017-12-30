@@ -11,3 +11,4 @@ c:\users\wretc\documents\visual studio 2017\Projects\RAMDiskCopy2\RAMDiskCopy2\o
 c:\users\wretc\documents\visual studio 2017\Projects\RAMDiskCopy2\RAMDiskCopy2\obj\Debug\RAMDiskCopy2.pdb
 C:\Users\wretc\documents\visual studio 2017\Projects\RAMDiskCopy2\RAMDiskCopy2\obj\Debug\RAMDiskCopy2.About.resources
 C:\Users\wretc\documents\visual studio 2017\Projects\RAMDiskCopy2\RAMDiskCopy2\obj\Debug\RAMDiskCopy2.Disclaimer.resources
+C:\Users\wretc\documents\visual studio 2017\Projects\RAMDiskCopy2\RAMDiskCopy2\obj\Debug\RAMDiskCopy2.vbproj.CoreCompileInputs.cache

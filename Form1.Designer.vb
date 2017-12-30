@@ -53,16 +53,22 @@ Partial Class RAMDiskCopy2
         Me.LoadProfile = New System.Windows.Forms.Button()
         Me.SaveProfileDialog = New System.Windows.Forms.SaveFileDialog()
         Me.LoadProfileDialog = New System.Windows.Forms.OpenFileDialog()
+        Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
+        Me.FolderButton = New System.Windows.Forms.Button()
+        Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
+        Me.FindFolder = New System.Windows.Forms.FolderBrowserDialog()
         Me.AppLayout.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
+        Me.TableLayoutPanel2.SuspendLayout()
+        Me.TableLayoutPanel3.SuspendLayout()
         Me.SuspendLayout()
         '
         'FilesButton
         '
-        Me.FilesButton.Dock = System.Windows.Forms.DockStyle.Top
-        Me.FilesButton.Location = New System.Drawing.Point(0, 0)
+        Me.FilesButton.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.FilesButton.Location = New System.Drawing.Point(3, 3)
         Me.FilesButton.Name = "FilesButton"
-        Me.FilesButton.Size = New System.Drawing.Size(627, 23)
+        Me.FilesButton.Size = New System.Drawing.Size(307, 23)
         Me.FilesButton.TabIndex = 0
         Me.FilesButton.Text = "Choose Files"
         Me.FilesButton.UseVisualStyleBackColor = True
@@ -71,7 +77,7 @@ Partial Class RAMDiskCopy2
         '
         Me.FileList.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.FileName, Me.FileSize, Me.OriginPath})
         Me.FileList.Dock = System.Windows.Forms.DockStyle.Top
-        Me.FileList.Location = New System.Drawing.Point(0, 46)
+        Me.FileList.Location = New System.Drawing.Point(0, 57)
         Me.FileList.Name = "FileList"
         Me.FileList.Size = New System.Drawing.Size(627, 247)
         Me.FileList.TabIndex = 1
@@ -97,7 +103,7 @@ Partial Class RAMDiskCopy2
         '
         Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(149, 15)
+        Me.Label1.Location = New System.Drawing.Point(149, 14)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(117, 13)
         Me.Label1.TabIndex = 2
@@ -107,7 +113,7 @@ Partial Class RAMDiskCopy2
         '
         Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(149, 59)
+        Me.Label2.Location = New System.Drawing.Point(149, 56)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(118, 13)
         Me.Label2.TabIndex = 3
@@ -117,7 +123,7 @@ Partial Class RAMDiskCopy2
         '
         Me.Label3.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(150, 103)
+        Me.Label3.Location = New System.Drawing.Point(150, 98)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(115, 13)
         Me.Label3.TabIndex = 4
@@ -127,7 +133,7 @@ Partial Class RAMDiskCopy2
         '
         Me.Label4.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(151, 147)
+        Me.Label4.Location = New System.Drawing.Point(151, 140)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(113, 13)
         Me.Label4.TabIndex = 5
@@ -137,7 +143,7 @@ Partial Class RAMDiskCopy2
         '
         Me.Label5.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(152, 192)
+        Me.Label5.Location = New System.Drawing.Point(152, 182)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(111, 13)
         Me.Label5.TabIndex = 6
@@ -187,7 +193,7 @@ Partial Class RAMDiskCopy2
         'AvailableRAM
         '
         Me.AvailableRAM.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.AvailableRAM.Location = New System.Drawing.Point(354, 15)
+        Me.AvailableRAM.Location = New System.Drawing.Point(354, 14)
         Me.AvailableRAM.Name = "AvailableRAM"
         Me.AvailableRAM.Size = New System.Drawing.Size(124, 13)
         Me.AvailableRAM.TabIndex = 11
@@ -196,7 +202,7 @@ Partial Class RAMDiskCopy2
         'TotalSize
         '
         Me.TotalSize.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.TotalSize.Location = New System.Drawing.Point(354, 59)
+        Me.TotalSize.Location = New System.Drawing.Point(354, 56)
         Me.TotalSize.Name = "TotalSize"
         Me.TotalSize.Size = New System.Drawing.Size(124, 13)
         Me.TotalSize.TabIndex = 12
@@ -205,7 +211,7 @@ Partial Class RAMDiskCopy2
         'RAMSize
         '
         Me.RAMSize.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.RAMSize.Location = New System.Drawing.Point(366, 100)
+        Me.RAMSize.Location = New System.Drawing.Point(366, 95)
         Me.RAMSize.Name = "RAMSize"
         Me.RAMSize.Size = New System.Drawing.Size(100, 20)
         Me.RAMSize.TabIndex = 13
@@ -215,7 +221,7 @@ Partial Class RAMDiskCopy2
         '
         Me.DriveLetter.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.DriveLetter.FormattingEnabled = True
-        Me.DriveLetter.Location = New System.Drawing.Point(366, 143)
+        Me.DriveLetter.Location = New System.Drawing.Point(366, 136)
         Me.DriveLetter.Name = "DriveLetter"
         Me.DriveLetter.Size = New System.Drawing.Size(100, 21)
         Me.DriveLetter.TabIndex = 14
@@ -224,7 +230,7 @@ Partial Class RAMDiskCopy2
         '
         Me.FileSystem.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.FileSystem.FormattingEnabled = True
-        Me.FileSystem.Location = New System.Drawing.Point(366, 188)
+        Me.FileSystem.Location = New System.Drawing.Point(366, 178)
         Me.FileSystem.Name = "FileSystem"
         Me.FileSystem.Size = New System.Drawing.Size(100, 21)
         Me.FileSystem.TabIndex = 15
@@ -259,7 +265,7 @@ Partial Class RAMDiskCopy2
         Me.AppLayout.Controls.Add(Me.Label5, 1, 4)
         Me.AppLayout.Dock = System.Windows.Forms.DockStyle.Fill
         Me.AppLayout.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize
-        Me.AppLayout.Location = New System.Drawing.Point(0, 293)
+        Me.AppLayout.Location = New System.Drawing.Point(0, 304)
         Me.AppLayout.Name = "AppLayout"
         Me.AppLayout.RowCount = 5
         Me.AppLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
@@ -267,15 +273,14 @@ Partial Class RAMDiskCopy2
         Me.AppLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
         Me.AppLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
         Me.AppLayout.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
-        Me.AppLayout.Size = New System.Drawing.Size(627, 221)
+        Me.AppLayout.Size = New System.Drawing.Size(627, 210)
         Me.AppLayout.TabIndex = 18
         '
         'RemoveButton
         '
-        Me.RemoveButton.Dock = System.Windows.Forms.DockStyle.Top
-        Me.RemoveButton.Location = New System.Drawing.Point(0, 23)
+        Me.RemoveButton.Location = New System.Drawing.Point(3, 3)
         Me.RemoveButton.Name = "RemoveButton"
-        Me.RemoveButton.Size = New System.Drawing.Size(627, 23)
+        Me.RemoveButton.Size = New System.Drawing.Size(621, 22)
         Me.RemoveButton.TabIndex = 19
         Me.RemoveButton.Text = "Remove Selected Files"
         Me.RemoveButton.UseVisualStyleBackColor = True
@@ -327,9 +332,46 @@ Partial Class RAMDiskCopy2
         Me.LoadProfile.Text = "Load Profile"
         Me.LoadProfile.UseVisualStyleBackColor = True
         '
-        'LoadProfileDialog
+        'TableLayoutPanel2
         '
-        Me.LoadProfileDialog.FileName = "OpenFileDialog1"
+        Me.TableLayoutPanel2.ColumnCount = 2
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel2.Controls.Add(Me.FilesButton, 0, 0)
+        Me.TableLayoutPanel2.Controls.Add(Me.FolderButton, 1, 0)
+        Me.TableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top
+        Me.TableLayoutPanel2.Location = New System.Drawing.Point(0, 0)
+        Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
+        Me.TableLayoutPanel2.RowCount = 1
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel2.Size = New System.Drawing.Size(627, 29)
+        Me.TableLayoutPanel2.TabIndex = 16
+        '
+        'FolderButton
+        '
+        Me.FolderButton.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.FolderButton.Location = New System.Drawing.Point(316, 3)
+        Me.FolderButton.Name = "FolderButton"
+        Me.FolderButton.Size = New System.Drawing.Size(308, 23)
+        Me.FolderButton.TabIndex = 1
+        Me.FolderButton.Text = "Choose Folder"
+        Me.FolderButton.UseVisualStyleBackColor = True
+        '
+        'TableLayoutPanel3
+        '
+        Me.TableLayoutPanel3.ColumnCount = 1
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel3.Controls.Add(Me.RemoveButton, 0, 0)
+        Me.TableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Top
+        Me.TableLayoutPanel3.Location = New System.Drawing.Point(0, 29)
+        Me.TableLayoutPanel3.Name = "TableLayoutPanel3"
+        Me.TableLayoutPanel3.RowCount = 1
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel3.Size = New System.Drawing.Size(627, 28)
+        Me.TableLayoutPanel3.TabIndex = 16
         '
         'RAMDiskCopy2
         '
@@ -340,17 +382,19 @@ Partial Class RAMDiskCopy2
         Me.Controls.Add(Me.AppLayout)
         Me.Controls.Add(Me.TotalBar)
         Me.Controls.Add(Me.CopyBar)
-        Me.Controls.Add(Me.FileList)
-        Me.Controls.Add(Me.RemoveButton)
-        Me.Controls.Add(Me.FilesButton)
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Controls.Add(Me.AboutButton)
+        Me.Controls.Add(Me.FileList)
+        Me.Controls.Add(Me.TableLayoutPanel3)
+        Me.Controls.Add(Me.TableLayoutPanel2)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "RAMDiskCopy2"
         Me.Text = "RAMDiskCopy2"
         Me.AppLayout.ResumeLayout(False)
         Me.AppLayout.PerformLayout()
         Me.TableLayoutPanel1.ResumeLayout(False)
+        Me.TableLayoutPanel2.ResumeLayout(False)
+        Me.TableLayoutPanel3.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -385,4 +429,8 @@ Partial Class RAMDiskCopy2
     Friend WithEvents LoadProfile As Button
     Friend WithEvents SaveProfileDialog As SaveFileDialog
     Friend WithEvents LoadProfileDialog As OpenFileDialog
+    Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
+    Friend WithEvents FolderButton As Button
+    Friend WithEvents TableLayoutPanel3 As TableLayoutPanel
+    Friend WithEvents FindFolder As FolderBrowserDialog
 End Class

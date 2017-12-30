@@ -20,8 +20,12 @@
     Dim RMDIRProcess As New Process
     Dim OriginFile As String
     Dim DestinationFolder As String
+    Dim ParseFolderPath As String
 
     Private Sub RAMDiskCopy2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'If My.Application.CommandLineArgs.Count > 1 Then
+        'If RDC2 profile was opened, automatically parse files
+        'End If
         If Not IO.File.Exists("C:\Windows\System32\imdisk.cpl") Then
             MsgBox("This program requires the ImDisk Toolkit to function properly. Please download at https://sourceforge.net/projects/imdisk-toolkit/", MsgBoxStyle.OkOnly, "")
         End If
@@ -83,7 +87,8 @@
         While streamRead.Position < FileLength
             BytesRead = (streamRead.Read(byteBuffer, 0, 1048576))
             streamWrite.Write(byteBuffer, 0, BytesRead)
-            CopyBar.Value = CInt(streamRead.Position / FileLength * 100)
+            'Still working out why this isn't working right
+            'CopyBar.Value = CInt(streamRead.Position / FileLength * 100)
             Application.DoEvents()
         End While
         streamWrite.Flush()
@@ -136,6 +141,40 @@
             Next
             CheckSize()
         End If
+    End Sub
+
+    Private Sub FolderButton_Click(sender As Object, e As EventArgs) Handles FolderButton.Click
+        If FindFolder.ShowDialog = DialogResult.OK Then
+            ParseFolderPath = FindFolder.SelectedPath
+            ParseFolders()
+
+        End If
+
+    End Sub
+
+    Private Sub ParseFolders()
+        Dim files =
+            From d In IO.Directory.EnumerateDirectories(ParseFolderPath, "*", IO.SearchOption.AllDirectories)
+            From f In IO.Directory.EnumerateFiles(d, "*")
+            Select f
+        Dim ParseMe As String() = files.ToArray
+        For Each File As String In ParseMe
+            Dim Item As New ListViewItem
+            Item.Text = IO.Path.GetFileName(File)
+            Item.SubItems.Add(Math.Round((My.Computer.FileSystem.GetFileInfo(File).Length / 1048576), 3))
+            Item.SubItems.Add(IO.Path.GetDirectoryName(File))
+            FileList.Items.Add(Item)
+        Next
+        Dim FolderItself As New IO.DirectoryInfo(ParseFolderPath)
+        'Still working out the kinks in this one
+        For Each File In FolderItself.GetFiles
+            Dim Item As New ListViewItem
+            Item.Text = IO.Path.GetFileName(File.ToString)
+            Item.SubItems.Add(Math.Round((My.Computer.FileSystem.GetFileInfo(File.FullName).Length / 1048576), 3))
+            Item.SubItems.Add(File.DirectoryName)
+            FileList.Items.Add(Item)
+        Next
+        CheckSize()
     End Sub
 
     Private Sub RemoveButton_Click(sender As Object, e As EventArgs) Handles RemoveButton.Click
@@ -333,7 +372,7 @@
         Dim DropItem() As String = CType(e.Data.GetData("FileDrop", True), String())
         For Each file In DropItem
             If IO.Directory.Exists(file) Then
-                Exit Sub
+                ParseFolders()
             End If
         Next
         For Each file In DropItem
@@ -355,4 +394,5 @@
     Private Sub AboutButton_Click(sender As Object, e As EventArgs) Handles AboutButton.Click
         About.Show()
     End Sub
+
 End Class
